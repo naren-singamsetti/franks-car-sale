@@ -1,0 +1,40 @@
+<section class="mb-5 mt-5">
+    <div class="row container my-2">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div class="car-image d-flex justify-content-center align-items-center">
+                <div class="row mx-1">
+                    <div class="col-12 mb-0">
+                        Car Image
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" *ngIf="carDetails">
+            <h5>{{carDetails.model}}</h5>
+            <p class="mb-2 text-muted text-uppercase small">{{carDetails.make}}</p>
+            <p><span class="mr-1"><strong>{{carDetails.price | currency:'EUR'}}</strong></span></p>
+            <div class="table-responsive">
+                <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                        <tr>
+                            <th class="pl-0 w-25" scope="row"><strong>Location</strong></th>
+                            <td>{{carDetails.location}}</td>
+                        </tr>
+                        <tr>
+                            <th class="pl-0 w-25" scope="row"><strong>Licensed</strong></th>
+                            <td>{{carDetails.licensed ? 'Yes': 'No'}}</td>
+                        </tr>
+                        <tr>
+                            <th class="pl-0 w-25" scope="row"><strong>Model Year</strong></th>
+                            <td>{{carDetails.year_model}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            <button type="button" class="btn btn-primary btn-md mr-1 mb-2" (click)="addToCart(carDetails)">
+                <i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+            <button type="button" class="btn btn-light btn-md mr-1 mb-2" (click)="bookmarkCar(carDetails._id)">Bookmark</button>
+        </div>
+    </div>
+</section>

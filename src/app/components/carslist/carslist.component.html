@@ -1,0 +1,31 @@
+<div class="d-flex">
+    <div class="left-nav d-flex p-2">
+        <app-filters (searchFilters)="filterCarsData($event)"></app-filters>
+    </div>
+    <div class="container-fluid mb-4 p-2">
+        <div class="row justify-content-center row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <ng-container *ngFor="let carItem of filteredCarsData">
+                <a class="card m-2" [ngClass]="{ 'carItemNoLink' : !carItem.licensed }" [routerLink]="carItem.licensed ? ['/', 'cars', carItem._id] : []">
+                    <div class="card-img d-flex justify-content-center align-items-center">Car image</div>
+                    <div class="card-body">
+                        <span class="card-text"><small
+                                class="text-muted d-flex justify-content-end">{{carItem.date_added}}</small></span>
+                        <span>
+                            <h4 class="card-title">{{carItem.model}}</h4>
+                            <h6 class="card-text">{{carItem.make}}</h6>
+                        </span>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <span class="pr-1">{{carItem.price | currency:'EUR'}}</span>
+                                <span class="pr-1"><strong>|</strong></span>
+                                <span class="pr-1">{{carItem.year_model}}</span>
+                                <span class="pr-1"><strong>|</strong></span>
+                                <span>{{carItem.licensed ? 'Licensed' : 'Not Licensed' }}</span>
+                            </small>
+                        </p>
+                    </div>
+                </a>
+            </ng-container>
+        </div>
+    </div>
+</div>

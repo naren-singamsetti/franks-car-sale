@@ -1,0 +1,21 @@
+.left-nav {
+  width: 13rem;
+}
+.card {
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #333;
+  }
+  .card-img {
+    height: 150px;
+    color: white;
+    background-color: #717070;
+  }
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.carItemNoLink {
+  cursor: default;
+}

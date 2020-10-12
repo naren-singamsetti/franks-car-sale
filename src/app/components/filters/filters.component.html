@@ -1,0 +1,14 @@
+<div>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Search</label>
+            <input type="text" class="form-control" id="searchKeyWord" placeholder="Model or Maker" (change)="searchCarsWithKeyword($event.target.value)" />
+        </div>
+        <div class="form-group">
+            <label for="model_year">Model year from</label>
+            <input type="number" class="form-control" id="model_year_from" #model_year_from (change)="searchCarsWithModelYear($event.target.value, model_year_to.value)" />
+            <label for="model_year">Model year to</label>
+            <input type="number" class="form-control" id="model_year_to" #model_year_to (change)="searchCarsWithModelYear(model_year_from.value, $event.target.value)" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,43 @@
+<div class="col-sm-12 col-md-10 col-md-offset-1 container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th> </th>
+                <th> </th>
+                <th>Quantity</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cartItem of cartItems">
+                <td class="col-sm-8 col-md-6">
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">{{cartItem.item.model}}</h4>
+                            <h5 class="media-heading">{{cartItem.item.make}}</h5>
+                        </div>
+                    </div>
+                </td>
+                <td> </td>
+                <td> </td>
+                <td class="col-sm-1 col-md-1" style="text-align: center"><strong>{{cartItem.quantity}}</strong></td>
+                <td class="col-sm-1 col-md-1 text-right"><strong>{{cartItem.item.price | currency:'EUR'}}</strong></td>
+                <td class="col-sm-1 col-md-1 text-right"><strong>{{cartItem.quantity * cartItem.item.price | currency:'EUR'}}</strong></td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td>
+                    <h3>Total</h3>
+                </td>
+                <td class="text-right">
+                    <h3><strong>{{cartTotal | currency:'EUR'}}</strong></h3>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

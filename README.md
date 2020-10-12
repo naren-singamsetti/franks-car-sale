@@ -31,14 +31,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-## Features are implemented in this project.
+## Features implemented in this project.
 
 . Cars list displayed on the first page with search features like Text search and car model years search
+
 . Cars list is sorted in ascending way using `date_added` field
+
 . By clicking on a card in cars list, page will be redirected to cars details page
+
 . In Carslist page, click is restricted to the card(s) with the condition like `licensed=false`
+
 . Car details page is showing the complete car details and it contains two buttons `addToCart` and `Bookmark`
+
 . User can bookmark a car by clicking on `Bookmark` button, then the car id will be saved in local storage
+
 . User can add a car to cart by clicking `Add To cart` button, which will be saved as an object in local storage
+
 . User can see the selected cars in cart page. Here we are showing car price along with car information and total price of the cart.
+
 . If user added an item more than one time, total will be calculated based on the quantity and price.
